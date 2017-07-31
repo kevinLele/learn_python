@@ -18,7 +18,7 @@ index = 1
 #     2）如果没有则直接返回主页面
 def get_paging_from_main(url):
     main_html = WebUtils.get_page_html(url)
-    soup = BeautifulSoup(main_html.text)
+    soup = BeautifulSoup(main_html.text, "lxml")
     paging_bar_div = soup.find('div', {'class': 'page'})
     paging_list = []
 
@@ -46,7 +46,7 @@ def resolver_page(page_url):
 
     audio_list = []
     page_html = WebUtils.get_page_html(page_url)
-    sound_list_div = BeautifulSoup(page_html.text).findAll('ul', attrs={'class': 'js-audio-list'})
+    sound_list_div = BeautifulSoup(page_html.text, "lxml").findAll('ul', attrs={'class': 'js-audio-list'})
     sound_list = sound_list_div[0].findAll('li')
 
     for soundLi in sound_list:
