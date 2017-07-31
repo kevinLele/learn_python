@@ -20,7 +20,7 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 
-soup = BeautifulSoup(html)
+soup = BeautifulSoup(html, "lxml")
 print soup.prettify()  # 格式化输出
 
 print '-----------------------------------'
@@ -45,7 +45,6 @@ all_url = 'http://www.ximalaya.com/29553933/album/2811947'  ##开始的URL地址
 start_html = requests.get(all_url,
                           headers=headers)  ##使用requests中的get方法来获取all_url(就是：http://www.mzitu.com/all这个地址)的内容 headers为上面设置的请求头、请务必参考requests官方文档解释
 
-
 f = open('./test.txt', 'wt+')
 f.write(start_html.text)
 f.close()
@@ -61,6 +60,4 @@ for soundLi in soundList:
     print '%s %s' % (soundId, soundName)
 
 
-#print soup.prettify()
-
-
+# print soup.prettify()
