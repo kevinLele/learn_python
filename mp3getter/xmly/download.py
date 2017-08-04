@@ -1,5 +1,8 @@
 # coding:utf-8
 
+import sys
+sys.path.append("../..")
+
 from mp3getter.utils.BaseUtils import log
 import mp3getter.utils.DBUtils as DBUtils
 import mp3getter.utils.WebUtils as WebUtils

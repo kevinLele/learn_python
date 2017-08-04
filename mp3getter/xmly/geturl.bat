@@ -1,0 +1,2 @@
+python XmlyPageResolver.py
+pause
